@@ -25,7 +25,7 @@ class DecoupeCartonTest {
     void testVide() {
         int[][] dessins = new int[][]{};
 
-        int expected = 0;
+        int expected = Integer.MAX_VALUE;
         int actual = testDecoupeCarton(dessins);
         assertEquals(expected, actual);
     }
