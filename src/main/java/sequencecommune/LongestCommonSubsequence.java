@@ -21,6 +21,7 @@ public class LongestCommonSubsequence<T> {
     //@ requires 0 < longSecond &&  longSecond < secondSequence.length;
     //@ requires firstSequence[longFirst-1].equals(secondSequence[longSecond-1]);
     //@ ensures \result ==  longestSize(longFirst - 1, longSecond - 1)
+    //@ also
     //@ public normal_behaviour
     //@ requires 0 < longFirst &&  longFirst < firstSequence.length;
     //@ requires 0 < longSecond &&  longSecond < secondSequence.length;

@@ -32,6 +32,11 @@ public class LongestCommonSubsequenceDynamic<T> extends LongestCommonSubsequence
         return longestSize;
     }
 
+    public String getSubSequence() {
+        StringBuilder result = new StringBuilder();
+        return result.toString();
+    }
+
     //@ public normal_behaviour
     //@ requires longFirst ==  0 ||  longSecond ==  0;
     //@ ensures \result ==  0;
@@ -41,6 +46,7 @@ public class LongestCommonSubsequenceDynamic<T> extends LongestCommonSubsequence
     //@ requires 0 < longSecond &&  longSecond < secondSequence.length;
     //@ requires firstSequence[longFirst-1].equals(secondSequence[longSecond-1]);
     //@ ensures \result ==  longestSize(longFirst - 1, longSecond - 1)
+    //@ also
     //@ public normal_behaviour
     //@ requires 0 < longFirst &&  longFirst < firstSequence.length;
     //@ requires 0 < longSecond &&  longSecond < secondSequence.length;
@@ -69,7 +75,7 @@ public class LongestCommonSubsequenceDynamic<T> extends LongestCommonSubsequence
     //@ ensures \old(caseCache[longFirst-1][longSecond-1]) ==  null ==>   caseCache[longFirst-1][longSecond-1] ==  aCase);
     //@ ensures \result ==  longestSize(longFirst, longSecond);
     private int longestSizeProxy(int longFirst, int longSecond, Case aCase) {
-        if (longFirst >= 0 &&  longSecond >= 0 &&  caseCache[longFirst][longSecond] ==  null) {
+        if (longFirst >= 0 &&  longSecond >= 0 &&  caseCache[longFirst][longSecond] ==  null &&  aCase ==  Case.case2) {
             caseCache[longFirst][longSecond] = aCase;
         }
 
